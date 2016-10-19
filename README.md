@@ -10,7 +10,7 @@ Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mề
 1. Mô tả dự án
 -------------
 
-**Đối tượng sử dụng: **
+**Đối tượng sử dụng:**
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai triên hạ tầng IaaS tại một hoặc nhiều node. Mục đích tạo private và public cloud cho tổ chức doanh nghiệp hoặc nghiên cứu.
 **Tầng PaaS:**
 -	Code lập trình với Java Server Face Framework
