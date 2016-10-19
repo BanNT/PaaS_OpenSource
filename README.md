@@ -26,14 +26,14 @@ Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn
 #### Cấu hình network gồm:
 
 ##### Public: 
-cung cấp dải địa chỉ IP cho các instances kết nối ra môi trường internet cho các máy ảo, thông số cấu hình như sau:
+Cung cấp dải địa chỉ IP cho các instances kết nối ra môi trường internet cho các máy ảo, thông số cấu hình như sau:
 - Subnet name: public-subnet
 - Network Address: 172.16.69.0/24
 - Gateway IP: 172.16.69.1
 - Allocation Pools: 172.16.69.171, 172.16.69.179
 
 ##### Internal-network: 
-cung cấp dải ip tĩnh cho các instances liên lạc nội bộ với nhau, thông số cấu hình như sau:
+Cung cấp dải ip tĩnh cho các instances liên lạc nội bộ với nhau, thông số cấu hình như sau:
 - Subnet name: sub-internal
 - Network Address: 192.168.10.0/24
 - Gateway IP: 192.168.10.1
@@ -57,11 +57,11 @@ Chi tiết sử dụng dashboard tham khảo tại: http://docs.openstack.org/us
 - Thiết lập tài khoản FTP cho ubuntu server, tham khảo tại: http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/
 
 ## Triển khai trên hạ tầng IaaS đã cài đặt
-Sau khi lập trình build ứng dụng chúng ta được gói .war
+Sau khi lập trình, build ứng dụng chúng ta được gói .war trong thư mục dist.
 - Cài đặt JDK và Apache Tomcat 7 trên ubuntu server
 - Upload gói war vào thư mục /var/bin/tomcat7/webapps/ (sử dụng FTP để upload file)
 - Restart Tomcat, dùng lệnh: service tomcat7 restart
-Truy cập ứng dụng tại địa chỉ: http://ip-address:port/Nucestack
+Truy cập ứng dụng tại địa chỉ: http://ip-address:port/Nucestack (Ví dụ: http://172.16.69.131:8080/Nucestack)
 
 > **Một vài lưu ý:**
 > Gọi và thực thi python file (credentials.py) để khởi tạo máy ảo:
