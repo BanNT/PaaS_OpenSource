@@ -4,12 +4,11 @@ Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mề
 # Mô tả dự án
 >Đối tượng sử dụng:
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai triên hạ tầng IaaS tại một hoặc nhiều node. Mục đích tạo private và public cloud cho tổ chức doanh nghiệp hoặc nghiên cứu.
-
 ### Tầng PaaS:
--	Code lập trình với Java Server Face Framework
--	Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads/
--	Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
--	Webserver: Apache Tomcat 7.
+- Code lập trình với Java Server Face Framework
+- Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads
+- Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
+- Webserver: Apache Tomcat 7.
 ### Tầng IaaS:
 -	Thử nghiệm triển khai trên hạ tầng IaaS cài đặt OpenStack.
 -	Sử dụng OpenStack Python APIs: http://docs.openstack.org/user-guide/sdk.html
@@ -50,8 +49,8 @@ Sau khi lập trình build ứng dụng chúng ta được gói .war
 - Upload gói war vào thư mục /var/bin/tomcat7/webapps/ (sử dụng FTP để upload file)
 - Restart Tomcat, dùng lệnh: service tomcat7 restart
 Truy cập ứng dụng tại địa chỉ: http://ip-address:port/Nucestack
-> ###### Một vài lưu ý:
-- Gọi và thực thi python file (credentials.py) để khởi tạo máy ảo:
+> **Một vài lưu ý:**
+> Gọi và thực thi python file (credentials.py) để khởi tạo máy ảo:
 Sử dụng phương thức createVMUbuntu() tại file PlatformBean.java
 ```
 public void createVMUbuntu() throws IOException {
