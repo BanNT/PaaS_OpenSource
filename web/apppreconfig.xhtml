@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="card-panel">     
+                            <div class="stepper">
+                                <ul>
+                                    <li class="complete">
+                                        <label class="stepper-step">1</label>
+                                        <span class="stepper-description">Select Platform
+                                        </span>
+                                    </li>
+
+                                    <li class="complete">
+                                        <label class="stepper-step">2</label>
+                                        <span class="stepper-description">Config Cloud
+                                        </span>
+                                    </li>
+
+                                    <li class="complete">
+                                        <label class="stepper-step">3</label>
+                                        <span class="stepper-description">Select services
+                                        </span>
+                                    </li>    
+                                </ul>    
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <h:form id="frmApp">
+                    <p:growl id="gr_appcart" autoUpdate="true"/>
+                    <p:notificationBar id="dashboard" position="top" effect="slide" styleClass="top" widgetVar="bar">
+                        <p:panelGrid columns="8" id="pg_dashboard">
+                            <h:graphicImage url="https://downloads.ulyaoth.net/png/tomcatwindows/tomcat.png" width="80" height="50"/> 
+                            <h:outputText value="#{sessionBean.mConfig().platform}"/>
+                            <h:outputText value="URL:" style="color: blue"/>
+                            <h:outputText value="http://#{sessionBean.mConfig().url}.nucecloud.com"/>
+                            <h:graphicImage url="https://pbs.twimg.com/profile_images/1240079072/logo-mysql-170x170_400x400.png" rendered="#{sessionBean.mConfig().database!=null}" width="80" height="50"/> 
+                            <h:outputText value="#{sessionBean.mConfig().database}" rendered="#{sessionBean.mConfig().database!=null}"/>
+                            <c:if test="#{sessionBean.mConfig().tools!=null}">
+                                <h:graphicImage url="https://lh6.googleusercontent.com/-96PZv1obTE0/AAAAAAAAAAI/AAAAAAAAACc/zYRtesYr9SU/photo.jpg" width="80" height="50"/> 
+                                <h:outputText value="#{sessionBean.mConfig().tools}"/>
+                            </c:if>
+                        </p:panelGrid>
+                    </p:notificationBar>
+                    <div class="container">
+                        <div class="col-md-12">
+                            <div class="tag">
+                                <div class="flow">
+                                    <div class="col-md-8">
+
+                                        <p:commandButton value="Your config" onclick="PF('bar').show()" style="width: 120px" type="button" icon="ui-icon-arrow-1-s"/>
+                                        <p:commandButton value="Hide" onclick="PF('bar').hide()" style="width: 120px" type="button" icon="ui-icon-arrow-1-n"/>                                     
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <!--                            <p:messages autoUpdate="true" showDetail="true" showSummary="true"/>-->
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="session">
+                                <h2 class="title"><h:outputText value="Cartridges"/> </h2>
+                                <div class="tag-group">
+                                    <div class="tag">
+                                        <div class="table-cel col-md-1">
+                                            <div class="row">
+                                                <h:graphicImage url="https://downloads.ulyaoth.net/png/tomcatwindows/tomcat.png" class="icon" width="50" height="50"/>
+
+                                            </div>
+                                        </div>
+                                        <div class="table-cel col-md-4">
+                                            <h2 class="margin"><h:outputText value="Java Platform with #{sessionBean.mConfig().platform}"/></h2>
+                                        </div>
+                                        <div class="table-cel col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-9 pull-right">
+                                                    <div class="row key-value">
+                                                        <span class="col-md-4">
+                                                            <p class="key">Status</p>
+                                                            <p class="value">Started</p>
+                                                        </span>
+                                                        <span class="col-md-4">
+                                                            <p class="key">Gears</p>
+                                                            <p class="value"><p:link value="#{sessionBean.getGear(sessionBean.mConfig().gears)}" href=""/></p>
+                                                        </span>
+<!--                                                        <span class="col-md-4">
+                                                            <p class="key">Storage</p>
+                                                            <p class="value"><p:link value="1 GB" href=""/></p>
+                                                        </span>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <c:if test="#{sessionBean.mConfig().database!=null}">
+                                        <div class="tag">
+                                            <div class="table-cel col-md-1">
+                                                <div class="row">
+                                                    <h:graphicImage url="https://pbs.twimg.com/profile_images/1240079072/logo-mysql-170x170_400x400.png" class="icon" width="50" height="50"/>
+
+                                                </div>
+                                            </div>
+                                            <div class="table-cel col-md-4">
+                                                <h2 class="margin"><h:outputText value="MySQL 5.6 "/></h2>
+                                            </div>
+                                            <div class="table-cel col-md-7">
+                                                <div class="row key-value">
+                                                    <span class="col-md-4">
+                                                        <p class="key">Database</p>
+                                                        <p class="value">#{sessionBean.mConfig().url}</p>
+                                                    </span>
+                                                    <span class="col-md-4">
+                                                        <p class="key">User</p>
+                                                        <p class="value">#{sessionBean.mConfig().url}_2016</p>
+                                                    </span>
+                                                    <span class="col-md-4">
+                                                        <p class="key">Password</p>
+                                                        <p class="value"><p:link value="Show" href="#" onclick="PF('dlg1').show();"/></p>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </c:if>
+                                    <c:if test="#{sessionBean.mConfig().tools!=null}">
+                                        <div class="tag">
+                                            <div class="table-cel col-md-1">
+                                                <div class="row">
+                                                    <h:graphicImage url="https://lh6.googleusercontent.com/-96PZv1obTE0/AAAAAAAAAAI/AAAAAAAAACc/zYRtesYr9SU/photo.jpg" class="icon" width="50" height="50"/>
+
+                                                </div>
+                                            </div>
+                                            <div class="table-cel col-md-4">
+                                                <h2 class="margin"><h:outputText value="phpMyAdmin 4.6.4"/></h2>
+                                            </div>                                          
+                                        </div>
+                                    </c:if>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-5">
+
+                                        <div class="session">
+                                            <h2 class="title"><h:outputText value="Databases"/>  </h2>
+                                            <div>
+                                                <p><p:link value="Add MongoDB 2.4" href=""/></p>
+                                                <p><p:link value="Add MySQL 5.6" href="cartridgetype.xhtml"/></p>
+                                                <p><p:link value="Add PostgreSQL 9.2" href=""/></p>
+                                                <p> <p:commandButton value="Back" immediate="true" class="cus-button" icon="btnBack" action="#{platformBean.backAppJava()}" style="width: 130px"/>
+                                                    <p:commandButton value="Create Platform" icon="btnSave" oncomplete="PF('confirm_create').show()"/>
+                                                    <p:commandButton id="btnManager" value="Manager hosting" immediate="true" class="cus-button" icon="btnManager" disabled="#{!platformBean.checkManager}" action="#{platformBean.managerHosting()}" style="width: 140px"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+
+                                        <div class="session">
+                                            <h2 class="title"><h:outputText value="Tools and Support"/> </h2>
+                                            <div>
+                                                <p><p:commandLink value="Add phpMyAdmin 4.6.4" actionListener="#{platformBean.addPhpmyadmin()}" update=":frmApp :frmApp:pg_dashboard" /></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                        <div class="col-md-4">
+                                                    <div class="session">
+                                                        <h2 class="title"><h:outputText value="Source Code"/></h2>
+                                                        <p>You must <p:link value="add an SSH public key to your account" href=""/> before you can upload code or remotely access your application.</p>
+                        
+                                                    </div>
+                                                    <div class="session">
+                                                        <h2 class="title"><h:outputText value="Remote Access"/></h2>
+                                                        <p>Requires a <p:link value="public key." href=""/> </p>
+                                                    </div>
+                                                    <div class="session">
+                                                        <p:commandButton value="Delete this Application"/>
+                                                    </div>
+                                                </div>-->
+                    </div>
+                    <p:confirmDialog id="confirm_delete" message="Are you sure create your cloud platform?"  
+                                     header="System" widgetVar="confirm_create" style="width: 100px" closable="false"> 
+                        <center><p:commandButton id="confirm_dl" style="width: 80px" icon="btnConfirm" value="Yes" onclick="PF('confirm_create').hide();PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()" actionListener="#{platformBean.createVMUbuntu()}" update=":frmApp:gr_appcart :frmApp:btnManager"/>
+                            <p:commandButton id="cancel_dl" style="width: 80px" value="Cancel" icon="btnCancel" onclick="PF('confirm_create').hide()"/>   </center>
+                    </p:confirmDialog>
+                    <p:dialog header="MySQL Password" widgetVar="dlg1" minHeight="40">
+                        <h:outputText value="#{sessionBean.mConfig().db_pass}" />
+                    </p:dialog>
+                    <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                        <p:graphicImage url="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" />
+                    </p:dialog>
+                </h:form>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>

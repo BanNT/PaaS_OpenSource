@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Register form</title>
+    </head>
+    <body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <h:form id="form_main">
+                    <p:growl id="growl" autoUpdate="true"/>
+                    <center>
+                        <p:panel id="pn_01" style="width: 480px; height: 400px;background: azure">
+                            <p:focus for="#{registerBean.forcus}" id="focus"/>
+                            <h:panelGrid columns="2" id="pg_01" cellpadding="10px">
+                                <h:outputLabel value="Full name:*"/>
+                                <p:inputText id="fullname" 
+                                             size="40" maxlength="25" value="#{registerBean.register.fullname}" required="true" requiredMessage="Fullname must input.">
+                                </p:inputText>
+                                <h:outputLabel value="Email:"/>
+                                <p:inputText id="email" value="#{registerBean.register.email}"
+                                             size="40" label="E-mail:*"></p:inputText>
+                                <h:outputLabel value="Company/School:*"/>
+                                <p:inputText id="company" 
+                                             size="40" maxlength="25"/>
+                                <h:outputLabel value="Country:*"/>
+                                <p:selectOneMenu id="country" style="width: 100% !important" value="#{registerBean.register.country}"> 
+                                    <f:selectItem id="vn" itemLabel="Vietnam" itemValue="Vietnam"/>
+                                    <f:selectItem id="usa" itemLabel="USA" itemValue="USA"/>
+                                    <f:selectItem id="en" itemLabel="England" itemValue="England"/>
+                                    <f:selectItem id="fr" itemLabel="France" itemValue="France"/>
+                                </p:selectOneMenu>
+                                <h:outputLabel value="Username:"/>
+                                <p:inputText id="username"
+                                             size="40" maxlength="50" value="#{registerBean.register.username}"  required="true" requiredMessage="Username must input.">
+                                </p:inputText>
+                                <h:outputLabel value="Password:"/>
+                                <p:password id="password" size="40" value="#{registerBean.register.password}"  required="true" requiredMessage="Password must input.">
+                                </p:password>                               
+                            </h:panelGrid>
+                            <div id="dvButton" style="margin-left: 40px; margin-top: 10px; margin-bottom: 30px">
+                                <p:commandButton id="btnsubmit" value="Register" icon="btnAdd" actionListener="#{registerBean.add()}" style="width: 100px" update="focus"/>
+                                <p:commandButton id="btnreset" value="Reset" icon="btnClear" style="width: 100px; margin-left: 5px" />
+                            </div>
+                            <p:panel id="lg" style="background: gold">
+                                <p:link outcome="index" value="Sign in">
+                                </p:link>
+                            </p:panel>
+
+                        </p:panel>
+                    </center>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

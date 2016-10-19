@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>My Hosting</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <p:panel header="Nucestack Dashboard" style="height: 450px">
+                    <h:form id="frmmain">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <h:panelGroup>
+                                <h:commandLink action="#{loginBean.myHosting()}">
+                                    <p:graphicImage url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmpIHrEeIbYW5rGatQMODJnPWPbBQlx-NMEUWtgMsx_a7cI9ubxw" title="My hosting managerment" width="180" height="180"/>
+                                </h:commandLink><br/>
+                                <h:outputText value="Hosting Management" style="margin-left: 30px"/>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                <h:commandLink action="#{loginBean.createHosting()}">
+                                    <p:graphicImage url="https://cdn0.iconfinder.com/data/icons/round-ui-icons/512/add_blue.png" width="200" height="200" title="Create new hosting"/>
+                                </h:commandLink><br/>
+                                <h:outputText value="Create a hosting" style="margin-left: 50px"/>
+                            </h:panelGroup>
+
+                        </h:panelGrid>
+                    </h:form>
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

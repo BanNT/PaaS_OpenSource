@@ -1,0 +1,114 @@
+
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 15px;
+    margin: 0px 0px 5px 0px;
+}
+
+#bottom {
+    position: relative;
+    background-color: orange;
+    padding: 15px;
+    margin: 5px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: black;
+    text-decoration : underline;
+}
+.ui-growl-item {
+    display: block;
+    padding: 10px 15px;
+    background-color: #ffff99;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px;
+}
+.btnAdd{    
+    background-image: url('../images/btnAdd.png') !important;
+}
+.btnSave{    
+    background-image: url('../images/btnSave.png') !important;
+}
+.btnEdit{    
+    background-image: url('../images/btnEdit.png') !important;
+}
+.btnDelete{    
+    background-image: url('../images/btnDelete.png') !important;
+}
+.btnClear{    
+    background-image: url('../images/btnClear.png') !important;
+}
+.flagen{    
+    background-image: url('../images/flagen.png') !important;
+}
+.flagvn{    
+    background-image: url('../images/flagvn.png') !important;
+}
+.login{    
+    background-image: url('../images/login.png') !important;
+}
+.reset{    
+    background-image: url('../images/reset.png') !important;
+}
+.btnBack{    
+    background-image: url('../images/btnBack.png') !important;
+}
+.btnNext{    
+    background-image: url('../images/btnNext.png') !important;
+}
+.btnConfirm{    
+    background-image: url('../images/btnConfirm.png') !important;
+}
+.btnCancel{    
+    background-image: url('../images/btnCancel.png') !important;
+}
+.btnManager{    
+    background-image: url('../images/btnManager.png') !important;
+}
+.btnDownload{    
+    background-image: url('../images/btnDownload.png') !important;
+}

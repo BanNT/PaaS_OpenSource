@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <h:form id="fm_cartridget">
+                    <div class="container">
+                        <ui:include src="myconfig.xhtml"/>
+                        <p:commandButton value="Your config" onclick="PF('bar').show()" style="width: 120px" type="button" icon="ui-icon-arrow-1-s"/>
+                        <p:commandButton value="Hide" onclick="PF('bar').hide()" style="width: 120px" type="button" icon="ui-icon-arrow-1-n"/>
+
+                        <h2 class="page-title">Add MySQL to <p:link value="http://#{sessionBean.mConfig().url}.nucecloud.com" href=""/></h2>
+                        <div class="session">
+                            <div class="tag">
+                                <h2 class="title"><h:outputText value="MySQL 5.6"/> </h2>
+                                <p><h:outputText value="MySQL is a multi-user, multi-threaded SQL database server"/></p>
+                                <div class="meta">
+                                    <p>Website: <p:link value="http://www.mysql.com" href="http://www.mysql.com"/></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session">
+                            <p><h:outputText value="Do you want to add the MySQL 5.5 cartridge to your application? "/></p>
+                            <p:commandButton value="Back" icon="btnBack" style="width: 110px" action="#{platformBean.backToAppreconf()}"/>
+                            <p:commandButton value="Add Cartridge" icon="btnAdd" action="#{platformBean.addMysql()}"/>
+                        </div>
+                    </div>
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

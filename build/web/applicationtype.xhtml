@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Select Platform</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <!--wizard-->
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="card-panel">     
+                            <div class="stepper">
+                                <ul>
+                                    <li class="complete">
+                                        <label class="stepper-step">1</label>
+                                        <span class="stepper-description">Select Platform
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <label class="stepper-step">2</label>
+                                        <span class="stepper-description">Your Configuration
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <label class="stepper-step">3</label>
+                                        <span class="stepper-description">Select services
+                                        </span>
+                                    </li>    
+                                </ul>    
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div id="page-content" class="container">
+                    <h:form id="frmApp">
+                        <div class="col-md-6">
+                            <div class="session">
+                                <h2 class="title">Java</h2>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://downloads.ulyaoth.net/png/tomcatwindows/tomcat.png" class="icon"/>                                    
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:commandLink value="Tomcat 8" ajax="false" action="#{platformBean.selectPlatform('Apache Tomcat 8')}" class="name"/></h2>
+                                        <p:link value="TOMCAT" href="" class="label"/>
+                                        <p:link value="TOMCAT 7" href="" class="label"/>
+                                        <p:link value="JDK" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="data:image/jpeg;base64,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zjZoHeStTDNoaOoNoKmKQ8GvaXeW9e8ewWCsgdBUMzxusSLkatNxqN2q4es5FMIcOg2aI8WSG48M4I/RB3GOYsylppKiS+WNhcQPaNtwF+0mw+K1MOoZ3gSVb+mdeZjJEMd/6N98hHa46EjQBcVNydYg2J9HHihko5LBzahhfPG0EEiNwNje3cO5WgAgWSyyiCC2r2fFXEMrubnjOeCYAF0UvYRxadxG4hV9Q48azH6ASM5qpgjqI6iP8rxaxae1rt47ireUIdl6T0gK/J/HDObzA9Et4kcbaXQfbAOr++JRYwDq/viVlB6x7qj4KQi9keAUfj3VHwUhF7I8Ag9oiICIiAiIgIiICIiAiIgIiIInAOr++JRMA6v74lEHrHupd4FSMW4eAWljLLxEdy42v29qYnZW0TXAaX51w3dwjKCwkVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76Sesqs93s+c76SCzUVZesqs93s+c76S2aDlBqpHgGhY0f/AFcf9NB12AdX98SsrOBNIjF9P+bogkXsBCjpcFicbloREHzOARcB5J6Ai4DyRED0BFwHknoCLgPJEQPQEXAeSegIuA8kRA9ARcB5J6Ai4DyRED0BFwHknoCLgPJEQPQEXAeSegIuA8kRAGARcB5L3HgkQNwAiIJKOMNFgiIg/9k=" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Glassfish" href="" class="name"/></h2>
+                                        <p:link value="GLASSFISH" href="" class="label"/>
+                                        <p:link value="JDK" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="http://2.bp.blogspot.com/-xIRa1eIHbY4/UTvtIVot4XI/AAAAAAAADH8/bkSjY2_P5jg/s640/jetty_logo.png" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Jetty" href="" class="name"/></h2>
+                                        <p:link value="JETTY" href="" class="label"/>
+                                        <p:link value="JDK" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="http://blog.monitor.us/wp-content/uploads/2012/03/jboss_logo2.jpg" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="JBoss" href="" class="name"/></h2>
+                                        <p:link value="JBOSS" href="" class="label"/>
+                                        <p:link value="J2EE" href="" class="label"/>
+                                        <p:link value="JDK" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                            </div> <!--  END SESSION  -->
+                            <div class="session">
+                                <h2 class="title">Instant App </h2>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmnJLdyYOsu2evHdurPFYnfbaVw3515GWTBOh5ApBF-cN8xB6C0Q" class="icon" width="50" height="50"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Drupal" href="" class="name"/></h2>
+                                        <p:link value="CMS" href="" class="label"/>
+                                        <p:link value="DRUPAL" href="" class="label"/>
+                                        <p:link value="NOT SCALABLE" href="" class="label"/>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcREwH9al8wIiCz0d3uVVxlIkUwA8vKrfkW_L-tOLwNDNh8JVA8OLw" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Wordpress" href="" class="name"/></h2>
+                                        <p:link value="CMS" href="" class="label"/>
+                                        <p:link value="WORDPRESS" href="" class="label"/>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2PtIfM23Gc89-Das9Jh0o6Df7N-hHszSToH76C3i1hAtSkLx7" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Joomla" href="" class="name"/></h2>
+                                        <p:link value="CMS" href="" class="label"/>
+                                        <p:link value="JOOMLA" href="" class="label"/>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                            </div> <!--  END SESSION  -->
+                        </div> <!--  END COLUMN  -->
+                        <div class="col-md-6">
+                            <div class="session">
+                                <h2 class="title">PHP</h2>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="http://blog.pnyet.web.id/wp-content/uploads/2012/03/php54.jpg" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:commandLink value="PHP 5.4" actionListener="#{platformBean.selectPlatform('PHP 5.4')}" class="name"/></h2>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://www.arvixe.com/images/hosting/php-5-3.gif" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="PHP 5.3" href="" class="name"/></h2>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="http://teachyourself.vn/wp-content/uploads/2015/10/codeigniter.jpg" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="CodeIgniter" href="" class="name"/></h2>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://moltin.com/addons/shared_addons/themes/moltinTwo/img/tools/hhvm.png" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="HHVM" href="" class="name"/></h2>
+                                        <p:link value="PHP" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <div class="table-cel col-md-1">
+                                        <div class="row">
+                                            <h:graphicImage url="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSzGJKKoCaC0RV7-PZNB7KZHQZUq8cbZQNIk9eNBMvHjrZElZ6k" class="icon"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="table-cel col-md-9">
+                                        <h2><p:link value="Laravel 5.0" href="" class="name"/></h2>
+                                        <p:link value="LARAVEL" href="" class="label"/>
+                                    </div>
+                                    <div class="table-cel col-md-2">
+
+                                    </div>
+                                </div>
+                            </div> <!--  END SESSION  -->
+
+                        </div> <!--  END COLUMN  -->
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

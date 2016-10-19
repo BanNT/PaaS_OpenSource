@@ -1,0 +1,190 @@
+/* 
+    Created on : Aug 14, 2016, 12:29:14 PM
+    Author     : LEHOANG
+*/
+
+.page-title{
+    font-size: 22px;
+    font-weight: normal;
+}
+
+
+.session{
+    margin-bottom:30px;
+}
+.session .title{
+    font-size: 14px;
+    font-weight: bold;
+    margin:10px 0;
+}
+.tag{
+    padding:10px;
+    background:#fff;
+    margin-bottom:20px;
+    box-shadow: 1px 1px 2px #D8D8D8;
+    overflow: hidden;
+}
+.tag:hover{
+    box-shadow: 1px 1px 2px #b6b6b6;
+}
+.tag-group .tag{
+    margin-bottom:0px;
+}
+.tag-group .tag:first-child{
+    border-bottom:1px dashed #ccc;
+}
+.tag-group .tag:last-child{
+    border-bottom:none;
+}
+.key,
+.value{
+    float:left;
+    margin:0 6px 6px 0;
+}
+
+.value{
+    font-weight: bold;
+}
+.icon{
+    float:left;
+    width:100px;
+    height:100px;
+    display: block;
+}
+.table-cel{
+    display: table-cell;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+.table-cel .icon{
+    width:80px;
+    height:50px;
+    margin-right:10px;
+    margin-left: -10px;
+}
+.table-cel h2,
+.table-cel h2 a.name{
+    font-size: 16px;
+    font-weight: normal;
+    margin:0 0 10px 0;
+    display: block;
+    text-decoration: none;
+}
+.table-cel h2 a.name{
+    color:#0099C1;
+}
+.table-cel h2.margin{
+    margin:10px 0;
+}
+.table-cel h2 a.name:hover{
+    color:#D20005;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.key-value{
+    margin:10px 0;
+}
+.label,
+a.label{
+    color:#666;
+    font-size: 11px;
+    padding:3px;
+    display: inline-block;
+    text-decoration: none;
+}
+.label:hover,
+a.label:hover{
+    color:#333;
+    background:#f1f1f1;
+    text-decoration: none;
+}
+
+.form-row{
+    clear: both;
+    margin-bottom: 30px;
+}
+.control-label{
+    width:160px;
+    float:left;
+    margin:0;
+    font-weight: normal;
+    color:#666;
+    font-size: 18px;
+}
+.controls.first h3{
+    font-size: 18px;
+    font-weight: normal;
+}
+.controls{
+    margin-left:180px;
+}
+
+.input-group{
+    vertical-align: middle;
+    display: inline-block;
+}
+.add-on{
+    color:#333;
+    line-height: 30px;
+    font-size: 15px;
+}
+.add-on:first-child{
+    padding-right:15px;
+}
+.add-on:last-child{
+    padding-left:15px;
+}
+/*
+.cus-input{
+    padding:6px 15px;
+    border:1px solid #ccc;
+    margin:0;
+    font-size: 14px;
+    border-radius: 0;
+    box-shadow: none;
+    color:#333;
+}
+.cus-input:focus{
+    box-shadow: none;
+    outline: #0099C1;
+}*/
+
+
+.flow{
+    overflow: hidden;
+}
+.flow h2{
+    display: inline-block;
+    margin:8px 0 0 0;
+}
+.flow h2 a{
+    font-size: 22px;
+    color:#0099C1;
+    font-weight: normal;
+}
+.flow h2 a:hover{
+    font-size: 22px;
+    color:#D20005;
+    font-weight: normal;
+}
+.flow-block{
+    text-align: right;
+}
+.flow-block .app-state,
+.flow-block .count{
+    font-weight: normal;
+    font-size: 22px;
+    display: inline-block;
+    line-height: 36px;
+}
+.flow-block .count{
+    margin-left:10px;
+}
+ol {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  counter-reset: wizard;  
+}

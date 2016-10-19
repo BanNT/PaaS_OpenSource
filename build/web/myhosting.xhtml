@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>My Hosting</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:composition template="newTemplate.xhtml">
+            <ui:define name="content">
+                <p:panel header="Information Cloud">
+                    <p:accordionPanel multiple="true">
+                        <p:tab title="Account setting">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <h:outputText value="Username:" style="font-weight: bold"/>
+                                <h:outputText value="#{sessionBean.mUsername()}" style="font-weight: bold"/>
+                                <h:outputText
+                                    value="Current Password:*" />
+                                <p:inputText id="currentpass" value="#{loginBean.user.password}" rendered="true" requiredMessage="Current Password must input."/>
+                                <h:outputText
+                                    value="New Password:*" />
+                                <p:inputText id="newpass" value="#{loginBean.newPassword}" rendered="true" requiredMessage="New Password must input."/>
+                                <h:outputText
+                                    value="Confirm Password:*" />
+                                <p:inputText id="confirmpass" value="#{loginBean.confirmPass}" rendered="true" requiredMessage="Confirm Password must input."/>
+                                <p:commandButton id="btnChangepass" value="Save" icon="btnSave"/>
+                            </h:panelGrid>
+                        </p:tab>
+                        <p:tab title="Hosting Information">
+                            <p:panelGrid columns="8">
+                                <h:graphicImage url="https://downloads.ulyaoth.net/png/tomcatwindows/tomcat.png" width="80" height="50"/> 
+                                <h:outputText value="#{sessionBean.mConfig().platform}"/>
+                                <h:outputText value="URL:" style="color: blue"/>
+                                <h:outputText value="http://#{sessionBean.mConfig().url}.nucecloud.com"/>
+                                <h:graphicImage url="https://pbs.twimg.com/profile_images/1240079072/logo-mysql-170x170_400x400.png" rendered="#{sessionBean.mConfig().database!=null}" width="80" height="50"/> 
+                                <h:outputText value="#{sessionBean.mConfig().database}" rendered="#{sessionBean.mConfig().database!=null}"/>
+                                <h:graphicImage url="https://lh6.googleusercontent.com/-96PZv1obTE0/AAAAAAAAAAI/AAAAAAAAACc/zYRtesYr9SU/photo.jpg" rendered="#{sessionBean.mConfig().tools!=null}" width="80" height="50"/> 
+                                <h:outputText value="#{sessionBean.mConfig().tools}" rendered="#{sessionBean.mConfig().tools!=null}"/>
+                            </p:panelGrid>
+                        </p:tab>
+                        <p:tab title="Key Pair Tutorial">
+                            <h:panelGrid columns="1" cellpadding="10">
+                                <h:outputText value="Using your Keypair create Private key with PUTTYGEN. The Private key using login when ssh your VM (Linux server)" />
+                                <h:form>
+                                    <p:commandButton ajax="false" id="btnDownload" actionListener="#{platformBean.downloadKeyPair()}" value="Download key" icon="btnDownload"/>
+                                </h:form>
+
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" cellpadding="10" class="keypair">
+                                <p:graphicImage url="https://www.ibm.com/developerworks/mydeveloperworks/blogs/Dougclectica/resource/BLOGS_UPLOADED_IMAGES/puttygen.png" />
+                                <h:panelGroup>                                    
+                                    <h:outputText value="Step 1: Upload key.pem to PUTTYGEN, click to Load button"/><br/>
+                                    <h:outputText value="Step 2: Save Private key, click to Save private key"/><br/>
+                                    <h:outputText value="Step 3: Login to your IP using ssh with your private key."/><br/>
+                                    <a href="https://vorkbaard.nl/using-putty-and-keyfiles-to-ssh-into-your-ubuntu-12-04-server/" target="_blank">Click here to tutorial</a>
+                                </h:panelGroup>
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:accordionPanel>
+                    <br/>
+                    <p:commandButton value="Dashboard" immediate="true" class="cus-button" icon="btnBack" action="#{platformBean.backtoDashboard()}" style="width: 130px"/>
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

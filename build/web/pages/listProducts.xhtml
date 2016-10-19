@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>ListProdutcts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:composition template="../mytemplate.xhtml">
+            <ui:define name="content">
+                <p:panel id="pn_product" header="List Products">
+                    <p:growl id="msg" autoUpdate="true"/>
+                    <h:form id="formmain">
+                        <p:dataTable id="tbl_product" var="pro" value="#{productBean.arrProducts}" 
+                                     selectionMode="single" selection="#{productBean.product}" rowKey="#{pro.id}">                            
+                            <f:facet name="header">
+                                List Products
+                            </f:facet>
+                            <p:column headerText="Id">
+                                <h:outputText value="#{pro.id}" />
+                            </p:column>
+                            <p:column headerText="Name">
+                                <h:outputText value="#{pro.name}" />
+                            </p:column>
+                            <p:column headerText="Price">
+                                <h:outputText value="#{pro.price}" >
+                                    <f:convertNumber type="currency" minFractionDigits="0" currencySymbol="VND"/>
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="Datecreate">
+                                <h:outputText value="#{pro.datecreate}" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                </h:outputText>
+                            </p:column>
+                            <p:column style="width:32px;text-align: center">
+                                <p:commandButton update=":formmain:dl_detail" oncomplete="PF('proDialog').show()" icon="ui-icon-search" title="View">
+                                    <f:setPropertyActionListener value="#{pro}" target="#{productBean.product}" />
+                                </p:commandButton>
+                            </p:column>     
+                            <f:facet name="footer">
+                                <p:commandButton process="tbl_product"  update=":formmain:dl_detail" oncomplete="PF('proDialog').show()" icon="ui-icon-search" value="View" />
+                                <p:commandButton process="tbl_product" id="btnDelete" value="Delete" oncomplete="PF('confirm_delete').show()"/>
+                            </f:facet>
+                        </p:dataTable>
+                        <p:dialog  header="Product Info" widgetVar="proDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                            <p:outputPanel id="dl_detail" style="text-align:center;">
+                                <p:panelGrid  columns="2" >               
+                                    <h:outputText value="Id:" />
+                                    <h:outputText value="#{productBean.product.id}" />
+
+                                    <h:outputText value="Name" />
+                                    <h:outputText value="#{productBean.product.name}" />
+
+                                    <h:outputText value="Price" />
+                                    <h:outputText value="#{productBean.product.price}" style="color:#{dtSelectionView.selectedCar.color}"/>
+
+                                    <h:outputText value="Price" />
+                                    <h:outputText value="VND#{productBean.product.price}" />
+                                </p:panelGrid>
+                            </p:outputPanel>
+                        </p:dialog>
+                        <p:confirmDialog id="confirm_delete" message="Are you sure delete this product?"  
+                                         header="System" widgetVar="confirm_delete" style="width: 100" closable="false"> 
+                            <center><p:commandButton id="confirm_dl"  value="Yes" oncomplete="PF('confirm_delete').hide()"  
+                                                     actionListener="#{productBean.remove()}" update=":pn_product" />
+                                <p:commandButton id="cancel_dl" value="Cancel" onclick="PF('confirm_delete').hide()"/>   </center>
+                        </p:confirmDialog>
+                    </h:form>
+
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+
+
+    </body>
+</html>
