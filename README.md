@@ -7,7 +7,7 @@ Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn
 
 ### Tầng PaaS:
 - Sử dụng Java Server Faces Framework
-- Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads
+- Tool sử dụng Netbeans IDE 8.1, phiên bản Java EE: https://netbeans.org/downloads
 - Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
 - Webserver: Apache Tomcat 7.
 
