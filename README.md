@@ -63,6 +63,7 @@ Truy cập ứng dụng tại địa chỉ: http://ip-address:port/Nucestack
 > **Một vài lưu ý:**
 > Gọi và thực thi python file (credentials.py) để khởi tạo máy ảo:
 Sử dụng phương thức createVMUbuntu() tại file PlatformBean.java
+
 ```
 public void createVMUbuntu() throws IOException {
         //execute source openrc
@@ -133,8 +134,10 @@ public void createVMUbuntu() throws IOException {
 
     }
 ```
+
 Triệu gọi shell script (wp-shell-install.sh) cài đặt cms wordpress sau khi khởi tạo máy ảo thành công:
 Sử dụng phương thức installWP(String ip) tại file PlatformBean.java
+
 ```
 public void installWP(String ip) throws IOException, Exception {
         JSch jsch = new JSch();
@@ -197,5 +200,6 @@ public void installWP(String ip) throws IOException, Exception {
         }
     }
 ```
+
 > **Chú ý:** 
 > 2  file **credentials.py, init.py** đặt tại máy chủ cài đặt OpenStack, **wp-shell-install.sh** đặt tại một máy ảo đã được khởi tạo thành công, dùng để tạo snapshot sử dụng dashboard.
