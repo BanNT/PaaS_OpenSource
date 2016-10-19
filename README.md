@@ -45,7 +45,9 @@ Bộ định tuyến thiết bị định tuyến, giúp chia sẻ internet từ
 - Tên router: Router_nuce
 - Interfaces: router_interface (192.168.10.1), router_gateway (172.16.69.172)
  ![alt tag](https://cloud.githubusercontent.com/assets/12557684/19529228/3c371c52-9659-11e6-9a52-ebc4aa170d4a.png)
+ 
  Network Topology
+
 ### Khởi tạo các Flavors và upload các Images hệ điều hành.
 
 ### Cấp quyền cho các instances:
