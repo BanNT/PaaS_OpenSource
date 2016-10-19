@@ -1,61 +1,56 @@
 PaaS Opensource
 ===================
-
-
 Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mềm như một dịch vụ trên các IaaS khác nhau
-
-----------
-
-
-1. Mô tả dự án
--------------
-
-Đối tượng sử dụng:
+# Mô tả dự án
+>Đối tượng sử dụng:
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai triên hạ tầng IaaS tại một hoặc nhiều node. Mục đích tạo private và public cloud cho tổ chức doanh nghiệp hoặc nghiên cứu.
-Tầng PaaS:
+
+### Tầng PaaS:
 -	Code lập trình với Java Server Face Framework
 -	Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads/
 -	Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
 -	Webserver: Apache Tomcat 7.
-**Tầng IaaS:**
+### Tầng IaaS:
 -	Thử nghiệm triển khai trên hạ tầng IaaS cài đặt OpenStack.
 -	Sử dụng OpenStack Python APIs: http://docs.openstack.org/user-guide/sdk.html
 -	Cơ sở dữ liệu: MySQL
-2. Hướng dẫn cài đặt và triển khai
+# Hướng dẫn cài đặt và triển khai
 -------------
-#### <i class="icon-folder-open"> Tầng IaaS:
+## Tầng IaaS:
 -	Triển khai trên 1 hoặc nhiều node. Cài đặt OpenStack sử dụng Devstack, tham khảo hướng dẫn cài đặt tại: https://github.com/vietstacker/devstack-note
 -	Đăng nhập vào Dashboard của OpenStack và cấu hình các thành phần sau:
-#### <i class="icon-file"></i> Cấu hình network gồm:
--	 Public: cung cấp dải địa chỉ IP cho các instances kết nối ra môi trường internet cho các máy ảo, thông số cấu hình như sau:
-o	Subnet name: public-subnet
-o	Network Address: 172.16.69.0/24
-o	Gateway IP: 172.16.69.1
-o	Allocation Pools: 172.16.69.171, 172.16.69.179
--	 Internal-network: cung cấp dải ip tĩnh cho các instances liên lạc nội bộ với nhau, thông số cấu hình như sau:
-o	Subnet name: sub-internal
-o	Network Address: 192.168.10.0/24
-o	Gateway IP: 192.168.10.1
-o	Allocation Pools: 192.168.10.100, 192.168.10.200
-o	DNS Name Servers: 8.8.8.8
-#### <i class="icon-file"></i> Cấu hình router:
-Bộ định tuyến/thiết bị định tuyến, giúp chia sẻ internet từ các internal-network, thông số cấu hình:
-o	Tên router: Router_nuce
-o	Interfaces: router_interface (192.168.10.1), router_gateway (172.16.69.172)
+#### Cấu hình network gồm:
+##### Public: 
+cung cấp dải địa chỉ IP cho các instances kết nối ra môi trường internet cho các máy ảo, thông số cấu hình như sau:
+- Subnet name: public-subnet
+- Network Address: 172.16.69.0/24
+- Gateway IP: 172.16.69.1
+- Allocation Pools: 172.16.69.171, 172.16.69.179
+##### Internal-network: 
+cung cấp dải ip tĩnh cho các instances liên lạc nội bộ với nhau, thông số cấu hình như sau:
+- Subnet name: sub-internal
+- Network Address: 192.168.10.0/24
+- Gateway IP: 192.168.10.1
+- Allocation Pools: 192.168.10.100, 192.168.10.200
+- DNS Name Servers: 8.8.8.8
+### Cấu hình router:
+Bộ định tuyến thiết bị định tuyến, giúp chia sẻ internet từ các internal-network, thông số cấu hình:
+- Tên router: Router_nuce
+- Interfaces: router_interface (192.168.10.1), router_gateway (172.16.69.172)
  
-#### <i class="icon-file"></i> Khởi tạo các Flavors và upload các Images hệ điều hành.
-#### <i class="icon-file"></i> Cấp quyền cho các instances:
+### Khởi tạo các Flavors và upload các Images hệ điều hành.
+### Cấp quyền cho các instances:
 -	 Cấp quyền cho phép SSH bằng port 22, giúp người dùng đăng nhập vào hệ điều hành máy ảo bằng keypair sau khi khởi tạo.
 -	 Quyền cho phép ping tới địa chỉ ip máy ảo
 Chi tiết sử dụng dashboard tham khảo tại: http://docs.openstack.org/user-guide/dashboard.html
 - Thiết lập tài khoản FTP cho ubuntu server, tham khảo tại: http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/
-#### <i class="icon-folder-open"> Triển khai trên hạ tầng IaaS đã cài đặt
+## Triển khai trên hạ tầng IaaS đã cài đặt
 Sau khi lập trình build ứng dụng chúng ta được gói .war
 - Cài đặt JDK và Apache Tomcat 7 trên ubuntu server
 - Upload gói war vào thư mục /var/bin/tomcat7/webapps/ (sử dụng FTP để upload file)
 - Restart Tomcat, dùng lệnh: service tomcat7 restart
 Truy cập ứng dụng tại địa chỉ: http://ip-address:port/Nucestack
-> **Một vài lưu ý:** 
+> ###### Một vài lưu ý:
 - Gọi và thực thi python file (credentials.py) để khởi tạo máy ảo:
 Sử dụng phương thức createVMUbuntu() tại file PlatformBean.java
 ```
