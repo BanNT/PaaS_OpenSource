@@ -1,12 +1,12 @@
 PaaS Opensource
 ===================
-Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mềm như một dịch vụ trên các IaaS khác nhau
+Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mềm như một dịch vụ trên các IaaS khác nhau.
 # Mô tả dự án
 >Đối tượng sử dụng:
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai trên hạ tầng IaaS tại một hoặc nhiều node. Giải pháp hỗ trợ doanh nghiệp, người sử dụng triển khai ứng dụng một cách nhanh chóng trong quá trình phát triển phần mềm và tới người dùng cuối.
 
 ### Tầng PaaS:
-- Code lập trình với Java Server Face Framework
+- Sử dụng Java Server Faces Framework
 - Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads
 - Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
 - Webserver: Apache Tomcat 7.
