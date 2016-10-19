@@ -10,9 +10,9 @@ Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mề
 1. Mô tả dự án
 -------------
 
-**Đối tượng sử dụng:**
+Đối tượng sử dụng:
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai triên hạ tầng IaaS tại một hoặc nhiều node. Mục đích tạo private và public cloud cho tổ chức doanh nghiệp hoặc nghiên cứu.
-**Tầng PaaS:**
+Tầng PaaS:
 -	Code lập trình với Java Server Face Framework
 -	Tool sử dụng Netbean, phiên bản Java EE: https://netbeans.org/downloads/
 -	Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
@@ -194,6 +194,3 @@ public void installWP(String ip) throws IOException, Exception {
 ```
 > **Chú ý:** 
 > 2  file **credentials.py, init.py** đặt tại máy chủ cài đặt OpenStack, **wp-shell-install.sh** đặt tại một máy ảo đã được khởi tạo thành công, dùng để tạo snapshot sử dụng dashboard.
-### Mục lục
-
-[TOC]
