@@ -5,13 +5,13 @@ Nền tảng đám mây **mã nguồn mở**, hỗ trợ cấu hình phần mề
 >Đối tượng sử dụng:
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai trên hạ tầng IaaS tại một hoặc nhiều node. Giải pháp hỗ trợ doanh nghiệp, người sử dụng triển khai ứng dụng một cách nhanh chóng trong quá trình phát triển phần mềm và tới người dùng cuối.
 
-### Tầng PaaS:
+### Nền tảng PaaS:
 - Sử dụng Java Server Faces Framework
 - Tool sử dụng Netbeans IDE 8.1, phiên bản Java EE: https://netbeans.org/downloads
 - Thư viện sử dụng: JDK 8, Java Secure Channel (jsch-0.1.54.jar), mysql-connector-java-5.1.39.jar…
 - Webserver: Apache Tomcat 7.
 
-### Tầng IaaS:
+### Hạ tầng IaaS:
 -	Thử nghiệm triển khai trên hạ tầng IaaS cài đặt OpenStack.
 -	Sử dụng OpenStack Python APIs: http://docs.openstack.org/user-guide/sdk.html
 -	Cơ sở dữ liệu: MySQL
@@ -19,7 +19,7 @@ Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn
 # Hướng dẫn cài đặt và triển khai
 -------------
 
-## Tầng IaaS:
+## Hạ tầng IaaS:
 -	Triển khai trên 1 hoặc nhiều node. Cài đặt OpenStack sử dụng Devstack, tham khảo hướng dẫn cài đặt tại: https://github.com/vietstacker/devstack-note
 -	Đăng nhập vào Dashboard của OpenStack và cấu hình các thành phần sau:
 
