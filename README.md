@@ -1,6 +1,5 @@
 # PaaS_OpenSource
 Nền tảng đám mây mã nguồn mở, hỗ trợ cấu hình phần mềm như một dịch vụ trên các IaaS khác nhau.
-
 1. Mô tả dự án:
 Đối tượng sử dụng: 
 Các nhà phát triển phần mềm, các lập trình viên, sinh viên muốn tự xây dựng nền tảng đám mây, triển khai triên hạ tầng IaaS tại một hoặc nhiều node. Mục đích tạo private và public cloud cho tổ chức doanh nghiệp hoặc nghiên cứu.
